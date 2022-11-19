@@ -3,17 +3,17 @@ Do you have a persistant back pain? Do you worry that if you sneeze incorrectly 
 
 # Functionality
 #### User system to log past excersizes/streches and note results.
-#### homepage will have a body diagram displays muscle areas and suggested excersizes to help with pain in chosen areas.
+#### Homepage will have a body diagram displays muscle areas and suggested excersizes to help with pain in chosen areas.
+#### Profile page will save excersies that can be viewed or deleted at any time
+#### Profile page will also store activity using an API
 
-# How to get this done:
-
+# Models
 - ## Have user create an account 
-Username and Password would be need to create account
+#### Username and Password would be need to create account
 
 - ## Create Profile
-1. Username would serve as profile name
-2. Profile will save excersies that can be viewed or deleted at any time
-3. Profile will also store activity using an API
+#### Username would serve as profile name
+#### Connect Tracking API to track activity similar to GitHub
 
 - ## Body Diagram
 #### Using CSS tools to display body graph and making it interactive to display information and recommend steches
