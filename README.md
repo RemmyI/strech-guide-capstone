@@ -8,12 +8,19 @@ Do you have a persistant back pain? Do you worry that if you sneeze incorrectly 
 #### Profile page will also display usage of website with Pixela API https://pixe.la/
 
 # Models
-- ## Have user create an account 
-#### Username and Password would be need to create account
+
+- ## Custom User Model 
+#### Username (charfield)
+#### First_Name
+#### Last_Name
+
+- ## Exercises
+#### Date (datetimefield)
+#### Body part (charfield)
+#### Duration (charfield)
 
 - ## Create Profile
 #### Username would serve as profile name
-#### Connect Tracking API to track activity similar to GitHub
 
 - ## Body Diagram
 #### Using CSS tools to display body graph and making it interactive to display information and recommend steches
@@ -25,7 +32,7 @@ Do you have a persistant back pain? Do you worry that if you sneeze incorrectly 
 - Begin creation of profile model
 
 ## Week Two: 11/28/22 - 12/02/22
-- Connect Tracking API
+- Connect Tracking API https://pixe.la/
 - Finish Profile model.
 - Begin Body Diagram model
 
