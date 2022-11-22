@@ -5,7 +5,7 @@ Do you have a persistant back pain? Do you worry that if you sneeze incorrectly 
 #### User system to log past excersizes/streches and note results.
 #### Homepage will have a body diagram displays muscle areas and suggested excersizes to help with pain in chosen areas.
 #### Profile page will save excersies that can be viewed or deleted at any time
-#### Profile page will also store activity using an API
+#### Profile page will also display usage of website with Pixela API https://pixe.la/
 
 # Models
 - ## Have user create an account 
