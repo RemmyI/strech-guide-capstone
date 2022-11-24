@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 # from django.contrib.auth.models import User
-from users.models import CustomUser
+from users_app.models import CustomUser
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -8,6 +8,10 @@ from django.views.generic import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404
 
+class user_register(CreateView):
+    form_class = UserCreationForm
+    template_name = 'signup.html'
+    success_url = reverse_lazy('login')
 
 class user_profile(DetailView):
     model = CustomUser
@@ -16,8 +20,3 @@ class user_profile(DetailView):
 
     def get_object(self):
         return get_object_or_404(CustomUser, username=self.kwargs['username'])
-
-class user_register(CreateView):
-    form_class = UserCreationForm
-    template_name = 'signup.html'
-    success_url = reverse_lazy('login')
