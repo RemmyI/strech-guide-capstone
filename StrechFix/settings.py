@@ -44,7 +44,7 @@ ROOT_URLCONF = 'StrechFix.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,3 +114,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users_app.CustomUser'
+
+LOGIN_REDIRECT_URL ='streches:home'
+LOGOUT_REDIRECT_URL = 'streches:home'
+LOGIN_URL = 'login'

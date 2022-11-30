@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'StechApp'
-
-# making urls view and models
+app_name = 'streches'
+urlpatterns = [
+    path('', views.Home.as_view(), name='home'),
+]

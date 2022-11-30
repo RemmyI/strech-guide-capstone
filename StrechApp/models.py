@@ -7,12 +7,13 @@ class exercises(models.Model):
     Date = models.DateTimeField(auto_now_add=True)
     Bodypart = models.CharField(max_length=50)
     Duration = models.CharField(max_length=50)
+    Person = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.Bodypart} - {self.Date} - {self.Duration}'
 
     class Meta:
-        ordering = ['-date']
+        ordering = ['-Date']
 
     def get_absolute_url(self):
-        return reverse('posts:home')
+        return reverse('streches:home')
