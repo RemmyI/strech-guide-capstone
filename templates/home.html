@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Stecher Fix</title>
+    <title>Stretcher Fix</title>
 </head>
 
 <body>
@@ -13,13 +13,10 @@
     <div>
         <nav class="nav_bar">
             {% if user.is_authenticated %}
-            <h1>test</h1>
-            <h2>youre logged in</h2>
             <a href="{% url 'users:profile' user.username %}">{{user.username}}</a>
             <a href="{% url 'logout' %}">Logout</a>
 
             {% else %}
-            <h1>test2</h1>
             <a href="{% url 'login' %}">Login</a>
             <a href="{% url 'users:signup' %}">Register</a>
 
