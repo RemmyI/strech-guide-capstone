@@ -9,6 +9,8 @@ class exercises(models.Model):
     Duration = models.CharField(max_length=50)
     Person = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
+    # look into svg and D3 javascript for body graph
+
     def __str__(self):
         return f'{self.Bodypart} - {self.Date} - {self.Duration}'
 
