@@ -32,7 +32,7 @@ Do you have a persistant back pain? Do you worry that if you sneeze incorrectly 
 - Begin creation of profile model
 
 ## Week Two: 11/28/22 - 12/02/22
-- Connect Tracking API https://pixe.la/
+- Connect Steching api
 - Finish Profile model.
 - Begin Body Diagram model
 
