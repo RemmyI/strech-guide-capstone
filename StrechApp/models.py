@@ -18,4 +18,8 @@ class exercises(models.Model):
         ordering = ['-Date']
 
     def get_absolute_url(self):
-        return reverse('streches:home')
+        return reverse('stretches:home')
+
+# 
+# class categories:
+#     group

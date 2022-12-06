@@ -115,6 +115,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users_app.CustomUser'
 
-LOGIN_REDIRECT_URL ='streches:home'
-LOGOUT_REDIRECT_URL = 'streches:home'
+LOGIN_REDIRECT_URL ='stretches:home'
+LOGOUT_REDIRECT_URL = 'stretches:home'
 LOGIN_URL = 'login'
