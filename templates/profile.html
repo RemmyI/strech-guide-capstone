@@ -5,16 +5,12 @@
 <div id="profile_info">
   <h1>Profile</h1>
   <p>{{user_profile.username}}</p>
-  <p>{{user_profile.first_name}}</p>
-  <p>{{user_profile.items}}</p>
 </div>
 
 <div>
-  {% for item in muscles %}
-  {{item.Bodypart}}
-  {% endfor %}
+  {% for post in user_profile.exercises.all %}
+    <p>{{ post.Bodypart }}!</p>
+  {% endfor %}  
 </div>
-<!-- <div id="time">
-<input type="text">
-</div> -->
+
 {% endblock %}

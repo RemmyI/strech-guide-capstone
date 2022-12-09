@@ -7,7 +7,7 @@ class exercises(models.Model):
     Date = models.DateTimeField(auto_now_add=True)
     Bodypart = models.CharField(max_length=50)
     Duration = models.CharField(max_length=50)
-    Person = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    Person = models.ForeignKey(CustomUser, related_name='exercises', on_delete=models.CASCADE)
 
     # look into svg and D3 javascript for body graph
 
@@ -20,6 +20,3 @@ class exercises(models.Model):
     def get_absolute_url(self):
         return reverse('stretches:home')
 
-# 
-# class categories:
-#     group

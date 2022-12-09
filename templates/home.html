@@ -29,12 +29,13 @@
 
             {% endif %}
         </nav>
-<!-- put form here and then add an action that speaks to backend  -->
-        <div id="filter">
-            <input type="text" placeholder="Enter body part">
-            <button type="submit"></button>
-        </div>
-
+        <!-- put form here and then add an action that speaks to backend  -->
+        <form action="">
+            <div id="filter">
+                <input type="text" placeholder="Enter body part">
+                <button type="submit">search</button>
+            </div>
+        </form>
         <div id="exercises">
             {% if user.is_authenticated %}
             {{exc_name}}
@@ -44,18 +45,13 @@
             {{exc_inst}}
             {% endif %}
         </div>
-        {% for item in muscles %}
-        {{item.Bodypart}}
-        {% endfor %}
-    </div>
 
-    </div>
     </div>
 
 
-    <div>
-        {% block content %}
-        {% endblock %}
+
+    {% block content %}
+    {% endblock %}
 
 </body>
 

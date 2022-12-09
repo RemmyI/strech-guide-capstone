@@ -33,6 +33,7 @@ def stretches(request):
             "exc_equ":data[0]['equipment'],
             "exc_inst":data[0]['instructions'],
             'muscles':muscles
+
         }
         # print('!!!!!!!!!!!!!!!!!!!!!!!!!', data[0]['name'])
     else:
