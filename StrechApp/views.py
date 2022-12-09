@@ -20,16 +20,21 @@ from django.contrib.auth.hashers import make_password
 def stretches(request):
     type = 'stretching'
     muscle = 'neck'
-    api_url = f'https://api.api-ninjas.com/v1/exercises?muscle={muscle}'
+    api_url = f'https://api.api-ninjas.com/v1/exercises?muscle={muscle}&type={type}'
     response = requests.get(api_url, headers={'X-Api-Key': '/eC7c8Yhpc3WiypBjxYKZg==bbWEvsg9V9HO5HKv'})
     data = json.loads(response.text)
 
+    muscles = exercises.objects.all()
+
     if response.status_code == requests.codes.ok:
         context = {
-            "object_list": data[0],
-            "object_name":data[0]['name']
+            "exc_list": data[0],
+            "exc_name":data[0]['name'],
+            "exc_equ":data[0]['equipment'],
+            "exc_inst":data[0]['instructions'],
+            'muscles':muscles
         }
-        print('!!!!!!!!!!!!!!!!!!!!!!!!!', data[0]['name'])
+        # print('!!!!!!!!!!!!!!!!!!!!!!!!!', data[0]['name'])
     else:
         print("Error:", response.status_code, data)
     

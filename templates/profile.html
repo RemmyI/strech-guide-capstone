@@ -8,4 +8,13 @@
   <p>{{user_profile.first_name}}</p>
   <p>{{user_profile.items}}</p>
 </div>
+
+<div>
+  {% for item in muscles %}
+  {{item.Bodypart}}
+  {% endfor %}
+</div>
+<!-- <div id="time">
+<input type="text">
+</div> -->
 {% endblock %}

@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stretcher Fix</title>
@@ -28,26 +28,34 @@
             <a href="{% url 'users:signup' %}">Register</a>
 
             {% endif %}
-
-            <div id="exercises">
-                {% for item in object_list %}
-                <p>{{item}}</p>
-                {% endfor %}
-<!-- 
-                {% for item in object_name %}
-                <p>{{item}}</p>
-                {% endfor %} -->
-            </div>
-            
         </nav>
-
-        <div id="app">
-
+<!-- put form here and then add an action that speaks to backend  -->
+        <div id="filter">
+            <input type="text" placeholder="Enter body part">
+            <button type="submit"></button>
         </div>
+
+        <div id="exercises">
+            {% if user.is_authenticated %}
+            {{exc_name}}
+            <br>
+            {{exc_equ}}
+            <br>
+            {{exc_inst}}
+            {% endif %}
+        </div>
+        {% for item in muscles %}
+        {{item.Bodypart}}
+        {% endfor %}
     </div>
 
-    {% block content %}
-    {% endblock %}
+    </div>
+    </div>
+
+
+    <div>
+        {% block content %}
+        {% endblock %}
 
 </body>
 
