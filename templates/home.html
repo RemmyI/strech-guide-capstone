@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="{% static 'styles.css'%}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- vue sourse -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- chart sourse -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <title>Stretcher Fix</title>
 </head>
 
 <body>
-    <div>
-
-    </div>
     <div>
         <nav class="nav_bar">
             {% if user.is_authenticated %}
@@ -31,28 +32,67 @@
         </nav>
         <!-- put form here and then add an action that speaks to backend  -->
 
-    {% block content %}
 
-        <form action="">
-            <div id="filter">
-                <input type="text" placeholder="Enter body part">
-                <button type="submit">search</button>
+        {% block content %}
+        <div class="home-container">
+            <h3>Start Search</h3>
+            <hr>
+            <form action="" method="">
+                <div id="filter">
+                    <input type="text" placeholder="Enter body part" name="">
+                    <button type="submit">search</button>
+                </div>
+            </form>
+
+            <div id="exercises">
+                {% if user.is_authenticated %}
+                {{exc_name}}
+                <br>
+                {{exc_equ}}
+                <br>
+                {{exc_inst}}
+                {% endif %}
             </div>
-        </form>
-        <div id="exercises">
-            {% if user.is_authenticated %}
-            {{exc_name}}
-            <br>
-            {{exc_equ}}
-            <br>
-            {{exc_inst}}
-            {% endif %}
+
+            <a href="{% url 'stretches:add' %}">New stretch</a>
+
         </div>
 
+
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <div id="chart">
+            <script>
+                const ctx = document.getElementById('myChart');
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['neck', 'lower back', 'middle_back', 'glutes', 'traps'],
+                        datasets: [{
+                            label: 'Hours spent stretching',
+                            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
     </div>
-    
+
     {% endblock %}
 
 </body>
+
+
 
 </html>

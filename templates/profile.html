@@ -1,16 +1,17 @@
 {% extends "home.html" %}
 {%load static%}
 {% block content %}
-
 <div id="profile_info">
-  <h1>Profile</h1>
-  <p>{{user_profile.username}}</p>
-</div>
+  <div>
+    <h1>Profile</h1>
+    <p>{{user_profile.username}}</p>
+  </div>
 
-<div>
-  {% for post in user_profile.exercises.all %}
+  <div>
+    {% for post in user_profile.exercises.all %}
     <p>{{ post.Bodypart }}</p>
-  {% endfor %}  
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

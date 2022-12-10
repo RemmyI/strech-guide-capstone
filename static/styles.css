@@ -25,11 +25,19 @@ body{
     justify-content: space-evenly;
     margin-bottom: 2rem;
     /* background-color: black; */
-    color: violet;
     font-size: 1.5rem;
 }
 
 #login{
 display: flexbox;
+}
 
+.home-container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+#profile_info{
+    display: flexbox;
+    justify-content: center;
 }
