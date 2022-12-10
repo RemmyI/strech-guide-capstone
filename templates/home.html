@@ -30,6 +30,9 @@
             {% endif %}
         </nav>
         <!-- put form here and then add an action that speaks to backend  -->
+
+    {% block content %}
+
         <form action="">
             <div id="filter">
                 <input type="text" placeholder="Enter body part">
@@ -47,10 +50,7 @@
         </div>
 
     </div>
-
-
-
-    {% block content %}
+    
     {% endblock %}
 
 </body>

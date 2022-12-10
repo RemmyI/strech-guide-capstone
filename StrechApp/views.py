@@ -10,6 +10,7 @@ from .models import exercises
 # from django.contrib.auth.models import User
 from users_app.models import CustomUser
 from django.contrib.auth.hashers import make_password
+from django.db.models import Q 
 
 # Create your views here.
 # class Home(ListView):
@@ -23,6 +24,8 @@ def stretches(request):
     api_url = f'https://api.api-ninjas.com/v1/exercises?muscle={muscle}&type={type}'
     response = requests.get(api_url, headers={'X-Api-Key': '/eC7c8Yhpc3WiypBjxYKZg==bbWEvsg9V9HO5HKv'})
     data = json.loads(response.text)
+    # q = request.GET.get"" 2hrs 6mns watch video 
+
 
     muscles = exercises.objects.all()
 
