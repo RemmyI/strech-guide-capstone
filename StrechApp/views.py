@@ -20,6 +20,9 @@ from django.db.models import Q
 
 
 def stretches(request):
+    # if request.method == "POST":
+    #     bodypart = request.POST.get()
+
     type = 'stretching'
     muscle = 'neck'
     api_url = f'https://api.api-ninjas.com/v1/exercises?muscle={muscle}&type={type}'
@@ -28,10 +31,10 @@ def stretches(request):
     data = json.loads(response.text)
     q = request.GET.get('q')if request.GET.get('q') != None else ''
 
-    muscles = exercises.objects.all()
-    # muscles = exercises.objects.filter(
-    #     Q(muscles__name__icontains = q)
-    #     )
+    # muscles = exercises.objects.all()
+    muscles = exercises.objects.filter(
+        Q(Bodypart__icontains = q)
+        )
 
     if response.status_code == requests.codes.ok:
         context = {

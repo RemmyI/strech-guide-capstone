@@ -37,9 +37,17 @@
         <div class="home-container">
             <h3>Start Search</h3>
             <hr>
-            <form action="" method="">
+            <!-- <form action="" method="">
                 <div id="filter">
                     <input type="text" placeholder="Enter body part" name="">
+                    <button type="submit">search</button>
+                </div>
+            </form> -->
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div id="filter">
+                    <input type="text" placeholder="Enter body part" name="bodypart">
                     <button type="submit">search</button>
                 </div>
             </form>
@@ -73,7 +81,7 @@
                         labels: ['neck', 'lower back', 'middle_back', 'glutes', 'traps'],
                         datasets: [{
                             label: 'Hours spent stretching',
-                            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                            data: [1.5, .75, .25, 1, .25, 7, 8, 9, 10],
                             borderWidth: 1
                         }]
                     },
